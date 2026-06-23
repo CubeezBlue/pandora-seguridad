@@ -14,7 +14,7 @@
   <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#0d1b2a]">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="index.html">
-        <img src="images/3ecc5e14-41a4-40d7-ad03-f50f8042f543-1.png" alt="Pandora Seguridad" class="h-14" />
+        <img src="images/img-logo-header.png" alt="Pandora Seguridad" class="h-14" />
       </a>
       <ul class="hidden md:flex gap-8 text-white font-semibold text-sm tracking-wide">
         <li><a href="index.html" class="hover:text-yellow-400 transition">Inicio</a></li>
@@ -78,24 +78,51 @@
         <p class="text-red-600 font-bold text-base">Pandora Seguridad – Protegiendo lo que más querés</p>
       </div>
       <div class="flex justify-center">
-        <div class="bg-[#0d1b2a] p-8 rounded-xl text-center">
-          <img src="images/3ecc5e14-41a4-40d7-ad03-f50f8042f543-1.png" alt="Pandora Seguridad Logo" class="h-40 mx-auto mb-4" />
-          <p class="text-yellow-400 font-bold text-lg tracking-wide" style="font-family:'Oswald',sans-serif;">PROTEGIENDO LO QUE MÁS QUERÉS</p>
-        </div>
+        <img src="images/img-nosotros.jpg" alt="Nosotros" class="rounded-xl w-full object-cover max-h-96 shadow-lg" />
       </div>
     </div>
   </section>
 
-  <!-- GALERÍA DE TRABAJOS -->
+  <!-- GALERÍA / SLIDER DE TRABAJOS -->
   <section class="bg-gray-100 py-16">
     <div class="max-w-5xl mx-auto px-6">
-      <div class="grid grid-cols-3 gap-4">
-        <img src="images/instalar-una-camara-de-seguridad-en-la-pared-de-una-casa-moderna.jpg" alt="Instalación" class="rounded-lg object-cover w-full h-48" />
-        <img src="images/licencia-instalar-camaras-colombia.jpg" alt="Trabajo" class="rounded-lg object-cover w-full h-48" />
-        <img src="images/529586421_17850887916523915_5565489954457617207_n.jpg" alt="Técnico" class="rounded-lg object-cover w-full h-48" />
+      <h2 class="text-3xl font-bold text-[#0d1b2a] text-center mb-8" style="font-family:'Oswald',sans-serif;">Nuestros Trabajos</h2>
+      <!-- Slider -->
+      <div class="relative overflow-hidden rounded-xl">
+        <div id="slider" class="flex transition-transform duration-500">
+          <img src="images/img-slider-nosotros-1.jpg" alt="Trabajo 1" class="w-full flex-shrink-0 object-cover h-80" />
+          <img src="images/img-slider-nosotros-2.jpg" alt="Trabajo 2" class="w-full flex-shrink-0 object-cover h-80" />
+          <img src="images/img-slider-nosotros-3.jpg" alt="Trabajo 3" class="w-full flex-shrink-0 object-cover h-80" />
+          <img src="images/img-slider-nosotros-4.jpg" alt="Trabajo 4" class="w-full flex-shrink-0 object-cover h-80" />
+          <img src="images/img-slider-nosotros-5.webp" alt="Trabajo 5" class="w-full flex-shrink-0 object-cover h-80" />
+          <img src="images/img-slider-nosotros-6.jpg" alt="Trabajo 6" class="w-full flex-shrink-0 object-cover h-80" />
+        </div>
+        <button id="prev-btn" onclick="changeSlide(-1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center text-xl transition">&#8249;</button>
+        <button id="next-btn" onclick="changeSlide(1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center text-xl transition">&#8250;</button>
       </div>
+      <!-- Dots -->
+      <div class="flex justify-center gap-2 mt-4" id="dots"></div>
     </div>
   </section>
+  <script>
+    let current = 0;
+    const total = 6;
+    const slider = document.getElementById('slider');
+    const dotsContainer = document.getElementById('dots');
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'w-3 h-3 rounded-full transition ' + (i === 0 ? 'bg-red-600' : 'bg-gray-400');
+      d.onclick = () => goTo(i);
+      dotsContainer.appendChild(d);
+    }
+    function goTo(n) {
+      current = (n + total) % total;
+      slider.style.transform = `translateX(-${current * 100}%)`;
+      document.querySelectorAll('#dots button').forEach((d, i) => d.className = 'w-3 h-3 rounded-full transition ' + (i === current ? 'bg-red-600' : 'bg-gray-400'));
+    }
+    function changeSlide(dir) { goTo(current + dir); }
+    setInterval(() => changeSlide(1), 4000);
+  </script>
 
   <!-- FOOTER -->
   <footer class="bg-[#0d1b2a] text-white py-12">
@@ -112,7 +139,7 @@
         </a>
       </div>
       <div class="text-center">
-        <img src="images/3ecc5e14-41a4-40d7-ad03-f50f8042f543-1.png" alt="Pandora Seguridad" class="h-20 mx-auto mb-4" />
+        <img src="images/img-logo-footer.png" alt="Pandora Seguridad" class="h-20 mx-auto mb-4" />
         <p class="text-xs text-gray-400">Ubi: Córdoba, Córdoba, Argentina || Tel: 0351-211-7012 || Mail: pandoraseguridad@outlook.com</p>
       </div>
       <div class="text-right">
