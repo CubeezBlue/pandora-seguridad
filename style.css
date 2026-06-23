@@ -1,0 +1,42 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'Open Sans', sans-serif; }
+
+.hero-bg {
+  background-image: url('images/upscalemedia-transformed.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.obtene-bg {
+  background-image: url('images/nightvision2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.page-hero-bg {
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh;
+}
+
+.nosotros-hero {
+  background-image: url('images/about-bg-2.jpg');
+}
+
+.servicios-hero {
+  background-image: url('images/outdoor-image-02.jpg');
+}
+
+.contacto-hero {
+  background-image: url('images/Diseno-sin-titulo-7.jpg');
+}
+
+#navbar.scrolled {
+  background-color: #0d1b2a;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.nav-link-active {
+  color: #facc15 !important;
+}

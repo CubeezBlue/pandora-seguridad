@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "pandora",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "pandora-netlify", "-p", "4200", "--no-clipboard"],
+      "port": 4200
+    }
+  ]
+}
